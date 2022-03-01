@@ -1,5 +1,5 @@
 FROM node:16-alpine AS parent
-ENV DOCROOT=${DOCROOT}
+ENV DOCROOT=var/www/html
 COPY package.json .
 RUN npm install
 COPY server.js .
