@@ -1,4 +1,4 @@
-FROM node:16-alpine AS parent
+FROM node:16-alpine
 ENV DOCROOT=var/www/html
 COPY package.json .
 RUN npm install
@@ -7,5 +7,3 @@ ONBUILD COPY src/ ${DOCROOT}/
 USER root
 EXPOSE 8001
 CMD ["npm", "start"]
-
-FROM parent AS child
